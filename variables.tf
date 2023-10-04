@@ -34,7 +34,7 @@ locals {
 variable "name" {
   type        = string
   description = "Name of repository"
-  default     = "cups"
+  default     = "coffee"
 }
 
 variable "business_unit" {
