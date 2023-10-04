@@ -3,6 +3,8 @@
 Repository to provision a GitHub repository as a starter
 template and create Argo CD application for it.
 
+test
+
 ## Requirements
 
 | Name | Version |
