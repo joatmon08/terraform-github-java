@@ -3,7 +3,7 @@ resource "kubernetes_manifest" "httproute_consul_starter" {
     "apiVersion" = "gateway.networking.k8s.io/v1alpha2"
     "kind"       = "HTTPRoute"
     "metadata" = {
-      "name"      = "starter"
+      "name"      = var.name
       "namespace" = "consul"
     }
     "spec" = {
@@ -18,7 +18,7 @@ resource "kubernetes_manifest" "httproute_consul_starter" {
           "backendRefs" = [
             {
               "kind"      = "Service"
-              "name"      = "starter"
+              "name"      = var.name
               "namespace" = var.business_unit
               "port"      = 8080
             },
