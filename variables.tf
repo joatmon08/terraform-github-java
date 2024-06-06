@@ -1,19 +1,13 @@
 variable "tfc_organization" {
   type        = string
   description = "TFC Organization with infrastructure resources"
-  default     = "tpmm-org-platform-engineering"
+  default     = "hashicorp-stack-demoapp"
 }
 
 variable "tfc_workspace_infrastructure" {
   type        = string
   description = "TFC Workspace with infrastructure resources"
   default     = "infrastructure"
-}
-
-variable "tfc_token" {
-  type        = string
-  description = "TFC Token to access remote state, only required for TF private module registry"
-  default     = null
 }
 
 data "terraform_remote_state" "infrastructure" {
@@ -23,7 +17,6 @@ data "terraform_remote_state" "infrastructure" {
     workspaces = {
       name = var.tfc_workspace_infrastructure
     }
-    token = var.tfc_token
   }
 }
 
@@ -34,12 +27,13 @@ locals {
 variable "name" {
   type        = string
   description = "Name of repository"
-  default     = "coffee"
+  default     = "payments-app"
 }
 
 variable "business_unit" {
   type        = string
   description = "Business unit for service"
+  default     = "payments-app"
 }
 
 variable "owner" {
