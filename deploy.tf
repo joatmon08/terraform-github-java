@@ -1,10 +1,16 @@
+resource "kubernetes_namespace" "starter" {
+  metadata {
+    name = var.business_unit
+  }
+}
+
 resource "kubernetes_manifest" "servicedefaults_starter" {
   manifest = {
     "apiVersion" = "consul.hashicorp.com/v1alpha1"
     "kind"       = "ServiceDefaults"
     "metadata" = {
       "name"      = var.name
-      "namespace" = var.business_unit
+      "namespace" = kubernetes_namespace.starter.metadata.0.name
     }
     "spec" = {
       "protocol" = "http"
@@ -18,7 +24,7 @@ resource "kubernetes_manifest" "service_starter" {
     "kind"       = "Service"
     "metadata" = {
       "name"      = var.name
-      "namespace" = var.business_unit
+      "namespace" = kubernetes_namespace.starter.metadata.0.name
     }
     "spec" = {
       "ports" = [
@@ -42,7 +48,7 @@ resource "kubernetes_manifest" "serviceaccount_starter" {
     "kind"       = "ServiceAccount"
     "metadata" = {
       "name"      = var.name
-      "namespace" = var.business_unit
+      "namespace" = kubernetes_namespace.starter.metadata.0.name
     }
   }
 }
@@ -56,7 +62,7 @@ resource "kubernetes_manifest" "deployment_starter" {
         "app" = var.name
       }
       "name"      = var.name
-      "namespace" = var.business_unit
+      "namespace" = kubernetes_namespace.starter.metadata.0.name
     }
     "spec" = {
       "replicas" = 1
