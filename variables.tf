@@ -27,13 +27,11 @@ locals {
 variable "name" {
   type        = string
   description = "Name of repository"
-  default     = "payments-app"
 }
 
 variable "business_unit" {
   type        = string
   description = "Business unit for service"
-  default     = "payments-app"
 }
 
 variable "owner" {
