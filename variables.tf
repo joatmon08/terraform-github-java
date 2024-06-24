@@ -51,3 +51,15 @@ variable "kubernetes_server" {
   description = "Deploy to Kubernetes server"
   default     = "https://kubernetes.default.svc"
 }
+
+variable "image" {
+  type        = string
+  description = "Container image for application to deploy"
+  default     = "rosemarywang/spring-boot-template:main"
+}
+
+variable "port" {
+  type        = number
+  description = "Application port"
+  default     = 8080
+}

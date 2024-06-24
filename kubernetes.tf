@@ -30,9 +30,9 @@ resource "kubernetes_manifest" "service_starter" {
       "ports" = [
         {
           "name"       = "http"
-          "port"       = 8080
+          "port"       = var.port
           "protocol"   = "TCP"
-          "targetPort" = 8080
+          "targetPort" = var.port
         },
       ]
       "selector" = {
@@ -83,11 +83,11 @@ resource "kubernetes_manifest" "deployment_starter" {
         "spec" = {
           "containers" = [
             {
-              "image" = "rosemarywang/spring-boot-template:main"
+              "image" = var.image
               "name"  = var.name
               "ports" = [
                 {
-                  "containerPort" = 8080
+                  "containerPort" = var.port
                 },
               ]
             },
