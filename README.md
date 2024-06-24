@@ -29,7 +29,11 @@ No modules.
 | Name | Type |
 |------|------|
 | [github_repository.app](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository) | resource |
-| [kubernetes_manifest.application_argocd_hashicups](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/manifest) | resource |
+| [kubernetes_manifest.deployment_starter](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/manifest) | resource |
+| [kubernetes_manifest.service_starter](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/manifest) | resource |
+| [kubernetes_manifest.serviceaccount_starter](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/manifest) | resource |
+| [kubernetes_manifest.servicedefaults_starter](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/manifest) | resource |
+| [kubernetes_namespace.starter](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace) | resource |
 | [aws_eks_cluster.cluster](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/eks_cluster) | data source |
 | [aws_eks_cluster_auth.cluster](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/eks_cluster_auth) | data source |
 | [terraform_remote_state.infrastructure](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/data-sources/remote_state) | data source |
@@ -43,9 +47,11 @@ No modules.
 | <a name="input_name"></a> [name](#input\_name) | Name of repository | `string` | n/a | yes |
 | <a name="input_owner"></a> [owner](#input\_owner) | GitHub template owner | `string` | `"joatmon08"` | no |
 | <a name="input_template_repository"></a> [template\_repository](#input\_template\_repository) | Template repository for Java app | `string` | `"spring-boot-template"` | no |
-| <a name="input_tfc_organization"></a> [tfc\_organization](#input\_tfc\_organization) | TFC Organization with infrastructure resources | `string` | `"tpmm-org-platform-engineering"` | no |
+| <a name="input_tfc_organization"></a> [tfc\_organization](#input\_tfc\_organization) | TFC Organization with infrastructure resources | `string` | `"hashicorp-stack-demoapp"` | no |
 | <a name="input_tfc_workspace_infrastructure"></a> [tfc\_workspace\_infrastructure](#input\_tfc\_workspace\_infrastructure) | TFC Workspace with infrastructure resources | `string` | `"infrastructure"` | no |
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_repository_url"></a> [repository\_url](#output\_repository\_url) | n/a |

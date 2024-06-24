@@ -2,15 +2,15 @@ terraform {
   required_providers {
     github = {
       source  = "integrations/github"
-      version = ">= 5.39"
+      version = ">= 6.2"
     }
     kubernetes = {
       source  = "hashicorp/kubernetes"
-      version = ">= 2.13"
+      version = ">= 2.31"
     }
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 5.0"
+      version = ">= 5.55"
     }
   }
 }
